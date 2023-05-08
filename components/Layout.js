@@ -1,11 +1,12 @@
-import { useRouter } from "next/router";
-import Nav from "./Nav";
+import Footer from "./footer/Footer";
+import Nav from "./navigation/Nav";
 
 export default function Layout({ children }) {
   return (
     <>
       <Nav />
       {children}
+      <Footer />
     </>
   );
 }

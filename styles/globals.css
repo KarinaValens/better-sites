@@ -7,6 +7,9 @@
   --font-copy-text: "Poppins", sans-serif;
   --font-display: "Lobster", cursive;
 
+  /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
+  --font-size-body: calc(12px + (16 - 12) * ((100vw - 390px) / (1200 - 390)));
+
   /* ---// Colors //--- */
   --primary-color-green: hsl(168, 96%, 10%);
 
@@ -36,7 +39,7 @@
 
 /* ---// Reset //--- */
 * {
-  outline: 2px dotted hotpink;
+  /* outline: 2px dotted hotpink; */
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -48,20 +51,40 @@
 
 html,
 body {
-  font: 100% var(--font-copy-text);
+  font: var(--font-size-body) var(--font-copy-text);
   color: var(--copy-text-color-black);
   background: var(--bg-color-light);
   min-width: 390px;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headings);
 }
 
 /*----------// Mobil First //----------  */
 /* Navigation */
+.navigation-desktop,
+.contact-button {
+  display: none;
+}
 
 nav {
   display: flex;
+  background-color: var(--primary-color-green);
   justify-content: space-between;
   padding: 24px;
+}
+.navigation-mobil {
+  display: flex;
+  justify-content: space-between;
   background-color: var(--primary-color-green);
+  padding: 24px;
 }
 #burger-button {
   display: flex;
@@ -77,6 +100,9 @@ nav {
   width: 48px;
   height: 4px;
   background-color: var(--accent-color-light-blue);
+  border-radius: 8px;
+
+  /* Animation */
   transition: all 0.2s;
   transform-origin: 50% 50%;
 }
@@ -91,13 +117,16 @@ nav {
 
 .open .burguer-span:first-child {
   transform: translateY(10px);
+  background-color: var(--accent-color-beige);
   opacity: 0;
 }
 .open .middle-top {
   transform: rotate(45deg);
+  background-color: var(--accent-color-beige);
 }
 .open .middle-bottom {
   transform: rotate(-45deg);
+  background-color: var(--accent-color-beige);
 }
 
 .open.middle-top,
@@ -106,12 +135,98 @@ nav {
 }
 .open .burguer-span:last-child {
   transform: translateY(-11px);
+  background-color: var(--accent-color-beige);
   opacity: 0;
 }
 
-@media (744px <= width <= 1440px) {
-  /* etc. */
+/* Menu Mobil */
+.menus-mobil {
+  background-color: var(--primary-color-green);
+  font: bold 1rem var(--font-copy-text);
+  display: flex;
+  flex-direction: column;
+  /*   gap: 1rem;
+ */
 }
+
+.menus-mobil a {
+  color: var(--accent-color-beige);
+  padding: 2rem;
+  display: block;
+}
+.menus-mobil a:hover,
+.navigation-desktop a:hover {
+  color: var(--accent-color-light-blue);
+  text-decoration: underline;
+}
+
+/* ---// Buttons //--- */
+.primary-button {
+  align-self: center;
+  padding: 8px 1rem;
+  width: 8rem;
+  height: 2.5rem;
+  background: var(--accent-color-light-blue);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  font: 700 var(--font-size-body) var(--font-copy-text);
+  color: var(--bg-color-light);
+  border: none;
+  text-shadow: -1px -1px 0 var(--copy-text-color-black), 1px -1px 0 var(--copy-text-color-black), -1px 1px 0 var(--copy-text-color-black), 1px 1px 0 var(--copy-text-color-black);
+  /* -webkit-text-stroke: 0.1px var(--copy-text-color-black); */
+  /* text-stroke: 1px black; */
+}
+
+/* -------// Footer //------*/
+footer {
+  position: absolute;
+  bottom: 0%;
+  background-color: var(--primary-color-green);
+}
+.logo-concept {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: var(--accent-color-beige);
+}
+.long-logo {
+  display: flex;
+  align-items: center;
+}
+
+@media (960px <= width) {
+  #burger-button {
+    display: none;
+  }
+
+  .navigation-desktop,
+  .contact-button {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+
+  .navigation-desktop a {
+    max-width: 9rem;
+    text-align: center;
+    color: var(--accent-color-beige);
+    font: 700 1rem var(--font-copy-text);
+    padding: 1rem;
+    display: block;
+  }
+
+  footer {
+    position: absolute;
+    width: 100%;
+    height: 10.63rem;
+    bottom: 0%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2.75rem;
+    background-color: var(--primary-color-green);
+  }
+}
+
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
