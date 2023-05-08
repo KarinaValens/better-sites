@@ -1,5 +1,5 @@
 //1. Import createContest from react
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 //2. Create the context that is goint to be used into the app
 export const AppContext = createContext();
@@ -14,6 +14,7 @@ export default function AppContextProvider({ children }) {
   //5. create a const that is going to be the value of the context,
   // with everything that we want to share to other pages or components
   const value = { show, setShow };
+  //6. Wrap the -app.js page in the context
 
   return (
     <div>
