@@ -1,26 +1,65 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Poppins&family=Spectral:wght@600&display=swap");
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+/* ---// CSS Root Variables //--- */
+:root {
+  /* ---// Fonts //--- */
+  --font-headings: "Spectral", serif;
+  --font-copy-text: "Poppins", sans-serif;
+  --font-display: "Lobster", cursive;
 
-* {
-  box-sizing: border-box;
+  /* ---// Colors //--- */
+  --prymary-color-green: hsl(168, 96%, 10%);
+
+  --accent-color-light-blue: hsl(209, 83%, 81%);
+  --accent-color-beige: hsl(35, 26%, 86%);
+
+  --copy-text-color-black: hsl(336, 19%, 5%);
+  --copy-text-color-white: hsl(0, 0%, 100%);
+
+  --bg-color-light: hsl(30, 100%, 99%);
 }
 
 @media (prefers-color-scheme: dark) {
+  :root {
+    /* ---// Colors //--- */
+    --prymary-color-green: hsl(168, 96%, 10%);
+
+    --accent-color-light-blue: hsl(209, 83%, 81%);
+    --accent-color-beige: hsl(35, 26%, 86%);
+
+    --copy-text-color-black: hsl(336, 19%, 5%);
+    --copy-text-color-white: hsl(0, 0%, 100%);
+
+    --bg-color-light: hsl(30, 100%, 99%);
+  }
+}
+
+/* ---// Reset //--- */
+* {
+  outline: 2px dotted hotpink;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+/* ---// Basic Styles //--- */
+
+html,
+body {
+  font: 100% var(--font-copy-text);
+  color: var(--copy-text-color-black);
+  background: var(--bg-color-light);
+}
+
+/*----------// Mobil First //----------  */
+
+@media (744px <= width <= 1440px) {
+  /* etc. */
+}
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-  body {
-    color: white;
-    background: black;
-  }
-}
+} */
