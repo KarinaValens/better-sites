@@ -24,6 +24,11 @@
 
   --bg-color-light: hsl(30, 100%, 99%);
   --bg-color-disaible: hsl(60, 2%, 88%);
+  --bg-glass-dark: hsla(0, 0%, 0%, 0.3);
+  --border-color-glass-light: hsla(0, 6%, 87%, 0.47);
+
+  /* ---// Styling //--- */
+  --containers-shadows: 4px 4px 4px var(--bg-glass-dark);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -51,10 +56,11 @@
   list-style-type: none;
 }
 
-/* ---// Basic Styles //--- */
+/* ---// Basic Styles & Reusable Styles //--- */
 
 html,
 body {
+  overflow-x: hidden;
   font: var(--font-size-body) var(--font-copy-text);
   color: var(--copy-text-color-black);
   background: var(--bg-color-light);
@@ -62,6 +68,12 @@ body {
   min-height: 100vh;
 }
 
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* -// Fonts //-*/
 h1,
 h2,
 h3,
@@ -69,6 +81,68 @@ h4,
 h5,
 h6 {
   font-family: var(--font-headings);
+}
+/* -// Buttons //- */
+.button {
+  align-self: center;
+  /* padding: 8px 1.5rem; */
+  width: 8rem;
+  height: 2.5rem;
+  border-radius: 20px;
+  box-shadow: var(--containers-shadows);
+  font: 700 var(--font-size-body) var(--font-copy-text);
+}
+.button:hover {
+  background: var(--copy-text-color-black);
+  color: var(--copy-text-color-black);
+  text-shadow: -1px -1px 0 var(--accent-color-light-blue), 1px -1px 0 var(--accent-color-light-blue), -1px 1px 0 var(--accent-color-light-blue), 1px 1px 0 var(--accent-color-light-blue);
+  border: none;
+}
+.primary-button {
+  background: var(--accent-color-light-blue);
+  color: var(--bg-color-light);
+  text-shadow: -1px -1px 0 var(--copy-text-color-black), 1px -1px 0 var(--copy-text-color-black), -1px 1px 0 var(--copy-text-color-black), 1px 1px 0 var(--copy-text-color-black);
+  border: none;
+}
+.secondary-button {
+  background: var(--bg-color-light);
+  color: var(--copy-text-color-black);
+  text-shadow: -1px -1px 0 var(--accent-color-light-blue), 1px -1px 0 var(--accent-color-light-blue), -1px 1px 0 var(--accent-color-light-blue), 1px 1px 0 var(--accent-color-light-blue);
+  border: solid 1px var(--accent-color-light-blue);
+}
+
+.bg-container {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+  position: relative;
+  background-size: cover;
+  background-color: var(--copy-text-color-black);
+  background-blend-mode: difference;
+  aspect-ratio: 1/0.8;
+}
+
+.glass-container {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  flex-direction: column;
+  max-width: calc(13vw * 5);
+  gap: 1rem;
+  padding: 2rem;
+  color: var(--bg-color-light);
+  border-radius: 20px;
+  border: solid 1px var(--border-color-glass-light);
+  background-color: var(--bg-glass-dark);
+  box-shadow: var(--containers-shadows);
+}
+.title {
+  color: var(--accent-color-light-blue);
+}
+.duo-button-container {
+  display: flex;
+  justify-content: space-around;
 }
 
 form {
@@ -83,10 +157,10 @@ label {
   gap: 5px;
 }
 
-/*----------// Mobil First //----------  */
+/*----------------------------// MOBIL FIRST //--------------------------  */
 /* Navigation */
 .navigation-desktop,
-.contact-button {
+nav button {
   display: none;
 }
 
@@ -161,8 +235,6 @@ nav {
   font: bold 1rem var(--font-copy-text);
   display: flex;
   flex-direction: column;
-  /*   gap: 1rem;
- */
 }
 
 .menus-mobil a {
@@ -170,25 +242,12 @@ nav {
   padding: 2rem;
   display: block;
 }
+
 .menus-mobil a:hover,
 .navigation-desktop a:hover {
   color: var(--accent-color-light-blue);
   text-decoration: underline;
-}
-
-/* ---// Buttons //--- */
-.primary-button {
-  align-self: center;
-  padding: 8px 1rem;
-  width: 8rem;
-  height: 2.5rem;
-  background: var(--accent-color-light-blue);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  font: 700 var(--font-size-body) var(--font-copy-text);
-  color: var(--bg-color-light);
-  border: none;
-  text-shadow: -1px -1px 0 var(--copy-text-color-black), 1px -1px 0 var(--copy-text-color-black), -1px 1px 0 var(--copy-text-color-black), 1px 1px 0 var(--copy-text-color-black);
+  text-underline-offset: 10px;
 }
 
 /* -------// Footer //------*/
@@ -215,16 +274,26 @@ footer > div {
   align-items: center;
 }
 
+@media (600px<=width) {
+  .bg-container {
+    aspect-ratio: 1/0.5;
+  }
+
+  .glass-container {
+    max-width: 50%;
+    padding: 1rem;
+  }
+}
 @media (960px <= width) {
   #burger-button {
     display: none;
   }
 
   .navigation-desktop,
-  .contact-button {
+  nav button {
     display: flex;
     justify-content: center;
-    align-self: center;
+    align-items: center;
   }
 
   .navigation-desktop a {
@@ -243,6 +312,11 @@ footer > div {
   }
   footer h3 {
     font-size: 1.2rem;
+  }
+  .glass-container {
+    max-width: 40%;
+    gap: 1.5rem;
+    padding: 3rem;
   }
 }
 
