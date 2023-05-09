@@ -3,7 +3,7 @@ import React from "react";
 
 export default function CTA() {
   return (
-    <article className="flex-columns">
+    <article className="flex-columns article-darck">
       <h2 className="display-text">Explore your potential </h2>
       <h2>Just 1200 DKK/m</h2>
       <div className="flex article-info">
