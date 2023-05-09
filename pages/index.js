@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
 import HeroSect from "../components/homepage/HeroSect";
+import CTA from "../components/homepage/CTA";
 
 export default function Home() {
   return (
@@ -11,6 +11,7 @@ export default function Home() {
       </Head>
       <main>
         <HeroSect />
+        <CTA />
       </main>
     </div>
   );

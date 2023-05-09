@@ -8,7 +8,7 @@
   --font-display: "Lobster", cursive;
 
   /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
-  --font-size-body: calc(12px + (16 - 12) * ((100vw - 390px) / (1200 - 390)));
+  --font-size-body: calc(12.5px + (16 - 12.5) * ((100vw - 390px) / (1250 - 390)));
 
   /* ---// Colors //--- */
   --primary-color-green: hsl(168, 96%, 10%);
@@ -73,7 +73,7 @@ main {
   grid-template-columns: 1fr;
 }
 
-/* -// Fonts //-*/
+/* -// CSS Element Selector//-*/
 h1,
 h2,
 h3,
@@ -82,10 +82,39 @@ h5,
 h6 {
   font-family: var(--font-headings);
 }
-/* -// Buttons //- */
+
+form {
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+label {
+  border-radius: 8px;
+  gap: 5px;
+}
+
+article {
+  background-color: var(--primary-color-green);
+  color: var(--copy-text-color-white);
+  padding-top: 2rem;
+}
+
+article h2 {
+  text-align: center;
+}
+
+/* -// Class Selectors  //- */
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-columns {
+  display: flex;
+  flex-direction: column;
+}
+
 .button {
-  align-self: center;
-  /* padding: 8px 1.5rem; */
   width: 8rem;
   height: 2.5rem;
   border-radius: 20px;
@@ -124,37 +153,52 @@ h6 {
 }
 
 .glass-container {
-  display: flex;
   justify-content: space-around;
   text-align: center;
-  flex-direction: column;
-  max-width: calc(13vw * 5);
-  gap: 1rem;
-  padding: 2rem;
   color: var(--bg-color-light);
   border-radius: 20px;
   border: solid 1px var(--border-color-glass-light);
   background-color: var(--bg-glass-dark);
   box-shadow: var(--containers-shadows);
 }
+
 .title {
   color: var(--accent-color-light-blue);
 }
+
 .duo-button-container {
-  display: flex;
   justify-content: space-around;
 }
-
-form {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 1rem;
+.article-info {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
 }
-label {
-  border-radius: 8px;
-  display: flex;
-  gap: 5px;
+
+.img-container {
+  position: relative;
+  /* height: 22.38rem; */
+  aspect-ratio: 1 / 0.8;
+  flex: 1 1 20.13rem;
+}
+
+.article-text {
+  flex: 1 1 22.38rem;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2.18rem 2rem;
+}
+
+.article-text p {
+  padding-bottom: 2.94rem;
+  display: inline-block;
+}
+
+.display-text {
+  font: 4rem var(--font-display);
+  color: var(--accent-color-light-blue);
+  margin-bottom: 1rem;
 }
 
 /*----------------------------// MOBIL FIRST //--------------------------  */
@@ -165,20 +209,12 @@ nav button {
 }
 
 nav {
-  display: flex;
   background-color: var(--primary-color-green);
   justify-content: space-between;
   padding: 24px;
 }
-.navigation-mobil {
-  display: flex;
-  justify-content: space-between;
-  background-color: var(--primary-color-green);
-  padding: 24px;
-}
-#burger-button {
-  display: flex;
-  flex-direction: column;
+
+.burger-button {
   justify-content: space-around;
   background-color: var(--primary-color-green);
   position: relative;
@@ -233,8 +269,6 @@ nav {
 .menus-mobil {
   background-color: var(--primary-color-green);
   font: bold 1rem var(--font-copy-text);
-  display: flex;
-  flex-direction: column;
 }
 
 .menus-mobil a {
@@ -252,7 +286,6 @@ nav {
 
 /* -------// Footer //------*/
 footer {
-  display: flex;
   flex-wrap: wrap;
   padding: 2rem;
   gap: 3rem;
@@ -262,33 +295,43 @@ footer {
   color: var(--accent-color-beige);
 }
 footer > div {
-  display: flex;
-  flex-direction: column;
-  flex: 0 1 243px;
   gap: 1rem;
   padding-bottom: 1.31rem;
   border-bottom: 1px solid var(--bg-color-disaible);
 }
+
+footer > div:first-child {
+  flex: 0 1 200px;
+}
 .long-logo {
-  display: flex;
   align-items: center;
 }
-
+.hero {
+  max-width: calc(314px + 2vw); /* 19.63rem */
+  gap: 1rem;
+  padding: 2rem;
+}
 @media (600px<=width) {
+  img {
+    border-radius: 8px;
+  }
   .bg-container {
     aspect-ratio: 1/0.5;
   }
 
-  .glass-container {
-    max-width: 50%;
+  .hero {
+    max-width: calc(314px + 4vw);
     padding: 1rem;
   }
 }
 @media (960px <= width) {
-  #burger-button {
+  .burger-button {
     display: none;
   }
 
+  nav button {
+    align-self: center;
+  }
   .navigation-desktop,
   nav button {
     display: flex;
@@ -312,11 +355,6 @@ footer > div {
   }
   footer h3 {
     font-size: 1.2rem;
-  }
-  .glass-container {
-    max-width: 40%;
-    gap: 1.5rem;
-    padding: 3rem;
   }
 }
 
