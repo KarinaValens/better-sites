@@ -3,7 +3,7 @@ import React from "react";
 
 export default function CTA() {
   return (
-    <article className="flex-columns article-darck">
+    <article className="flex-columns bg-dark cta-section">
       <h2 className="display-text">Explore your potential </h2>
       <h2>Just 1200 DKK/m</h2>
       <div className="flex article-info">
@@ -16,7 +16,7 @@ export default function CTA() {
           <button className="button primary-button">Contact Us</button>
         </div>
         <div className="img-container">
-          <Image src={"/media/first_cta_sect.webp"} alt={"logo"} /* width={200} height={200}  */ fill placeholder="empty" /* priority={true} */ />
+          <Image src={"/media/images/first_cta_sect.webp"} alt={"logo"} /* width={200} height={200}  */ fill placeholder="empty" /* priority={true} */ />
         </div>
       </div>
     </article>

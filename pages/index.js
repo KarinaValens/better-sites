@@ -2,6 +2,7 @@ import Head from "next/head";
 import HeroSect from "../components/homepage/HeroSect";
 import CTA from "../components/homepage/CTA";
 import IconsSection from "../components/homepage/IconsSection";
+import Services from "../components/homepage/Services";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <HeroSect />
         <CTA />
         <IconsSection />
+        <Services />
       </main>
     </div>
   );

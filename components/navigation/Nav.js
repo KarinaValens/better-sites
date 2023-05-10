@@ -13,7 +13,7 @@ export default function Nav() {
     <>
       <nav className="flex">
         <Anchor href={"/"}>
-          <Image src={"/media/logo.svg"} alt={"logo"} width={74} height={60} placeholder="empty" priority={true} sizes="10%" />
+          <Image src={"/media/svg/logo.svg"} alt={"logo"} width={74} height={60} placeholder="empty" priority={true} sizes="10%" />
         </Anchor>
         <NavMenusDesktop />
         <button className="button  primary-button">Contact Us</button>
