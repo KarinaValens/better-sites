@@ -60,7 +60,8 @@
 
 html,
 body {
-  overflow-x: hidden;
+  /*   overflow-x: hidden;
+ */
   font: var(--font-size-body) var(--font-copy-text);
   color: var(--copy-text-color-black);
   background: var(--bg-color-light);
@@ -204,10 +205,15 @@ label {
   color: var(--primary-color-green);
 }
 
+.carousel {
+  max-width: 100%;
+  height: 80vh;
+  overflow-x: hidden;
+}
 .cards-container {
   gap: 2rem;
   width: 80%;
-  height: 65vh;
+  height: 100%;
   overflow-x: scroll;
   padding: 2rem 0;
   margin: 0 auto;
@@ -219,13 +225,12 @@ label {
 }
 .card {
   position: relative;
-  flex: 0 0 53.67vw;
-  max-width: 300px;
-  min-width: 280px;
+  flex: 0 0 17rem;
+  /* max-width: 30vw;
+  min-width: 214.04px; */
   height: 100%;
   border-radius: 8px;
   box-shadow: var(--containers-shadows);
-  position: relative;
   background-size: cover;
   background-position: center;
 }
@@ -420,7 +425,7 @@ footer > div {
   }
   .cards-container {
     gap: 2rem;
-    width: 70%;
+    width: 80%;
     justify-content: flex-start;
   }
 }
