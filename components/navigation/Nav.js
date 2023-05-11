@@ -15,9 +15,9 @@ export default function Nav() {
         <Anchor href={"/"}>
           <Image src={"/media/svg/logo.svg"} alt={"logo"} width={74} height={60} placeholder="empty" priority={true} sizes="10%" />
         </Anchor>
+        <Hamburguer />
         <NavMenusDesktop />
         <button className="button  primary-button">Contact Us</button>
-        <Hamburguer />
       </nav>
       {show ? <NavMenusMobil /> : false}
     </>

@@ -8,7 +8,7 @@
   --font-display: "Lobster", cursive;
 
   /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
-  --font-size-body: calc(12.5px + (16 - 12.5) * ((100vw - 390px) / (1250 - 390)));
+  --font-size-body: calc(12.5px + (16 - 12.5) * ((100vw - 390px) / (1440 - 390)));
 
   /* ---// Colors //--- */
   --primary-color-green: hsl(168, 96%, 10%);
@@ -48,7 +48,8 @@
 
 /* ---// Reset //--- */
 * {
-  /* outline: 2px dotted hotpink; */
+  /*   outline: 2px dotted hotpink;
+ */
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -66,7 +67,6 @@ body {
   color: var(--copy-text-color-black);
   background: var(--bg-color-light);
   min-width: 390px;
-  min-height: 100vh;
 }
 
 main {
@@ -75,14 +75,43 @@ main {
 }
 
 /* -// CSS Element Selector//-*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-headings);
+/* To calculate the ratios, I used the common typography practice of setting the font size of the base element 
+(in this case, html or body) to a reasonable size, like 16px, and then calculating the size of the other 
+elements relative to that base size.
+For example, if the base font size is 16px and the ratio between the base size and the h1 size is 1.5, 
+then the h1 font size would be 24px (16px x 1.5).
+Here are the typical ratios for the different header sizes:
+Radios        %           rem
+h1: 2.5       100         3.15
+h2: 2          75%        2.36
+h3: 1.5        56.25      1.77
+h4: 1.25       42.18      1.49
+h5: 1          31.64      0.94
+h6: 0.875      23.73      0.75*/
+
+h1 {
+  font: 3.15rem var(--font-headings);
 }
+
+h2 {
+  font: 2.36rem var(--font-headings);
+}
+
+h3 {
+  font: 1.77rem var(--font-headings);
+}
+
+h4 {
+  font: 1.48rem var(--font-headings);
+}
+
+h5 {
+  font: 0.94rem var(--font-headings);
+}
+
+/* h6 {
+  font: 0.75rem var(--font-headings);
+} */
 
 form {
   flex-wrap: nowrap;
@@ -95,6 +124,7 @@ label {
 
 /* -// Class Selectors  //- */
 
+/* -// Layouts //- */
 .flex {
   display: flex;
   justify-content: space-between;
@@ -104,7 +134,14 @@ label {
   display: flex;
   flex-direction: column;
 }
+.wrap {
+  flex-wrap: wrap;
+}
 
+.grid-2x2 {
+  display: grid;
+  grid-template-columns: 60% 1fr;
+}
 .button {
   width: 8rem;
   height: 2.5rem;
@@ -133,14 +170,13 @@ label {
 
 .bg-container {
   width: 100%;
+  padding: 3rem;
   display: grid;
   place-items: center;
   grid-template-columns: 1fr;
   position: relative;
   background-size: cover;
   background-position: center;
-  background-color: var(--copy-text-color-black);
-  background-blend-mode: difference;
   aspect-ratio: 1/0.8;
 }
 
@@ -152,6 +188,7 @@ label {
   border: solid 1px var(--border-color-glass-light);
   background-color: var(--bg-glass-dark);
   box-shadow: var(--containers-shadows);
+  z-index: 2;
 }
 
 .title {
@@ -165,32 +202,30 @@ label {
 .bg-dark {
   background-color: var(--primary-color-green);
   color: var(--copy-text-color-white);
-  padding-top: 2rem;
 }
 
+.title-cta-sect {
+  grid-column: 1 / -1;
+}
 .article-info {
+  gap: 2rem;
   margin-top: 2rem;
-  flex-wrap: wrap;
   width: 100%;
+  grid-column: 1 / -1;
+  justify-content: center;
 }
 
 .img-container {
   position: relative;
-  /* height: 22.38rem; */
   aspect-ratio: 1 / 0.8;
-  flex: 1 1 20.13rem;
+  flex: 1 1 15rem;
 }
 
 .article-text {
-  flex: 1 1 22.38rem;
+  flex: 1 1 25rem;
+  padding: 2.18rem 1.5rem;
+  gap: 1rem;
   justify-content: center;
-  align-items: flex-start;
-  padding: 2.18rem 2rem;
-}
-
-.article-text p {
-  padding-bottom: 2.94rem;
-  display: inline-block;
 }
 
 .display-text {
@@ -199,24 +234,29 @@ label {
   margin-bottom: 1rem;
   text-align: center;
 }
-
+.title-display {
+  font: 2.36rem var(--font-display);
+  color: var(--accent-color-light-blue);
+  text-align: center;
+}
 .caption-text {
   font: 700 0.8rem var(--font-headings);
   color: var(--primary-color-green);
 }
 
 .carousel {
+  align-items: center;
   max-width: 100%;
-  height: 80vh;
+  height: 35rem;
   overflow-x: hidden;
 }
+
 .cards-container {
   gap: 2rem;
   width: 80%;
-  height: 100%;
+  height: 70%;
   overflow-x: scroll;
-  padding: 2rem 0;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .cards-container::-webkit-scrollbar {
@@ -226,15 +266,14 @@ label {
 .card {
   position: relative;
   flex: 0 0 17rem;
-  /* max-width: 30vw;
-  min-width: 214.04px; */
   height: 100%;
   border-radius: 8px;
   box-shadow: var(--containers-shadows);
   background-size: cover;
   background-position: center;
 }
-.card::before {
+.card::before,
+.bg-container::before {
   content: "";
   display: block;
   position: absolute;
@@ -243,25 +282,10 @@ label {
   width: 100%;
   height: 100%;
   border-radius: 8px;
-
   background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
   z-index: 1;
 }
-.card article {
-  justify-content: flex-end;
-  padding: 1rem;
-  gap: 1rem;
-  z-index: 2;
-}
 
-.card article a {
-  color: var(--accent-color-light-blue);
-}
-
-.card article a:active {
-  color: var(--accent-color-beige);
-  text-shadow: -1px -1px 0 var(--copy-text-color-black), 1px -1px 0 var(--copy-text-color-black), -1px 1px 0 var(--copy-text-color-black), 1px 1px 0 var(--copy-text-color-black);
-}
 /*----------------------------// MOBIL FIRST //--------------------------  */
 /* Navigation */
 .navigation-desktop,
@@ -272,7 +296,7 @@ nav button {
 nav {
   background-color: var(--primary-color-green);
   justify-content: space-between;
-  padding: 24px;
+  padding: 2rem;
 }
 
 .burger-button {
@@ -370,11 +394,18 @@ footer > div {
   justify-content: flex-start;
 }
 
+/* -------// Hero Sect //-------*/
+.hero {
+  max-width: calc(314px + 4vw); /* 19.63rem */
+  gap: 1rem;
+  padding: 2rem;
+}
+
 /* -------// Icon Sect //-------*/
 
 .icons-section {
   width: 90%;
-  margin: auto;
+  margin: 3rem auto;
 }
 .icons-group {
   flex-wrap: wrap;
@@ -384,7 +415,7 @@ footer > div {
   gap: 2rem;
 }
 .icon-container {
-  width: 8.5rem;
+  width: 9rem;
   gap: 1.2rem;
   padding: 8px 12px 8px 12px;
   align-items: center;
@@ -392,19 +423,46 @@ footer > div {
   box-shadow: var(--containers-shadows);
   border-radius: 8px;
 }
-/* -------// Hero Sect //-------*/
-.hero {
-  max-width: calc(314px + 2vw); /* 19.63rem */
-  gap: 1rem;
-  padding: 2rem;
-}
 
-/* -------// Call to Action //-------*/
+/* -------// Call to Action Sect//-------*/
 
 .cta-section {
-  align-items: center;
+  padding-top: 3rem;
 }
 
+/* -------// Services Card Sect//-------*/
+
+.card article {
+  justify-content: flex-end;
+  padding: 1rem;
+  gap: 1rem;
+  z-index: 2;
+}
+
+.card article a {
+  color: var(--accent-color-light-blue);
+}
+
+.card article a:active {
+  color: var(--accent-color-beige);
+  text-shadow: -1px -1px 0 var(--copy-text-color-black), 1px -1px 0 var(--copy-text-color-black), -1px 1px 0 var(--copy-text-color-black), 1px 1px 0 var(--copy-text-color-black);
+}
+
+/* -------// Second Call to Action Sect//-------*/
+.cta-2-title {
+  align-items: center;
+  color: var(--primary-color-green);
+}
+.img-group {
+  gap: 10px;
+  position: relative;
+  flex: 0 1 40rem;
+  height: 35rem;
+}
+
+.img-group img {
+  border-radius: 8px;
+}
 /* ------------------------------// Media Queries //-------------------------------------- */
 @media (600px<=width) {
   img {
@@ -415,17 +473,18 @@ footer > div {
   }
 
   .hero {
-    max-width: calc(314px + 4vw);
-    padding: 1rem;
+    max-width: calc(314px + 15vw);
+    padding: 2rem;
   }
 
   .icons-group {
-    max-width: 75%;
+    max-width: 60%;
     gap: 4rem;
   }
+
   .cards-container {
     gap: 2rem;
-    width: 80%;
+    width: 70%;
     justify-content: flex-start;
   }
 }

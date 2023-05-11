@@ -3,7 +3,7 @@ import React from "react";
 export default function TitleAdress() {
   return (
     <div className="title-address flex-columns">
-      <h3>Find Us:</h3>
+      <h4>Find Us:</h4>
       <ul>
         <li>Halgreensgade 1. 3-TV</li>
         <li>2300 Copenhagen- Denmark</li>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { cards } from "../../pages/api/cards";
 import { useState } from "react";
 
-export default function Services() {
+export default function ServicesCards() {
   const [truncatedText, setTruncatedText] = useState("");
 
   function truncateText(text, maxLength) {
@@ -13,13 +13,13 @@ export default function Services() {
     }
   }
   return (
-    <section className="bg-dark carousel">
-      <ul /* ref={ref}  */ className="flex cards-container">
+    <section className="bg-dark carousel flex">
+      <ul className="flex cards-container">
         {cards.map((card) => {
           return (
             <li key={card.id} style={{ backgroundImage: `url(${card.img})` /* "url(/media/images/service_sect_card1.webp)" */ }} className="card flex">
               <article className="flex-columns">
-                <h2>{card.title}</h2>
+                <h3>{card.title}</h3>
                 <p>{truncateText(card.short_text, 104)}</p>
                 <Link href={card.cta}> Read more...</Link>
               </article>
