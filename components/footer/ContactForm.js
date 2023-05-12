@@ -10,7 +10,7 @@ export default function ContactForm() {
           <input type="text" name="full-name" />
         </label>
         <label className="flex" htmlFor="email">
-          Full Name
+          Email
           <input type="email" name="email" />
         </label>
       </form>

@@ -265,12 +265,15 @@ label {
   margin: auto;
 }
 
-.cards-container::-webkit-scrollbar {
+.cards-container::-webkit-scrollbar,
+.card article::-webkit-scrollbar {
   /* this is going to hide the scroll bar */
   display: none;
 }
 .card {
   position: relative;
+  align-items: flex-end;
+  padding-bottom: 1rem;
   flex: 0 0 17rem;
   height: 100%;
   border-radius: 8px;
@@ -437,10 +440,12 @@ footer > div {
 /* -------// Services Card Sect//-------*/
 
 .card article {
-  justify-content: flex-end;
+  justify-self: flex-end;
   padding: 1rem;
   gap: 1rem;
   z-index: 2;
+  height: 60%;
+  overflow-y: scroll;
 }
 
 .card article a {
@@ -480,6 +485,41 @@ footer > div {
 .img-group img {
   border-radius: 8px;
 }
+/* -------------------// SERVICES PAGE //--------------------------- */
+
+/* --// Services Hero //-- */
+
+.services-hero .article-text {
+  justify-content: space-around;
+  flex: 1 1 5rem;
+}
+.services-hero-flex {
+  flex-wrap: wrap-reverse;
+}
+
+/* --// Services Cards //-- */
+.services-back-card {
+  display: none;
+  z-index: 2;
+  align-self: center;
+}
+
+
+.services-card:hover .services-front-card {
+  display: none;
+}
+.services-card:hover .services-back-card {
+  display: block;
+}
+
+.services-card h3 {
+  color: var(--accent-color-light-blue);
+}
+/* --// Services Form //-- */
+
+.services-form {
+  margin-bottom: 2rem;
+}
 /* ------------------------------// Media Queries //-------------------------------------- */
 @media (600px<=width) {
   .bg-container {
@@ -500,11 +540,21 @@ footer > div {
 
   .cards-container {
     gap: 2rem;
-    width: 70%;
+    width: 75%;
     justify-content: flex-start;
   }
   .img-group {
     padding: 3rem;
+  }
+  /* -----// Services Page //----- */
+  .services-hero {
+    padding: 5rem;
+  }
+  .services-hero > div {
+    gap: 5rem;
+  }
+  .services-hero .article-text {
+    flex: 1 1 10rem;
   }
 }
 @media (960px <= width) {

@@ -1,9 +1,13 @@
-import ServicesCTA from "../components/services/ServicesCTA";
+import ServicesCards from "../components/services/ServicesCards";
+import ServicesForm from "../components/services/ServicesForm";
+import ServicesHero from "../components/services/ServicesHero";
 
 export default function services() {
   return (
     <>
-      <ServicesCTA />
+      <ServicesHero />
+      <ServicesCards />
+      <ServicesForm />
     </>
   );
 }

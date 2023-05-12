@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { cards } from "../../pages/api/cards";
+import { home_cards } from "../../pages/api/cards";
 import { useState } from "react";
 
-export default function ServicesCards() {
+export default function HomeCards() {
   const [truncatedText, setTruncatedText] = useState("");
 
   function truncateText(text, maxLength) {
@@ -15,13 +15,14 @@ export default function ServicesCards() {
   return (
     <section className="bg-dark carousel flex">
       <ul className="flex cards-container">
-        {cards.map((card) => {
+        {home_cards.map((card) => {
           return (
-            <li key={card.id} style={{ backgroundImage: `url(${card.img})` /* "url(/media/images/service_sect_card1.webp)" */ }} className="card flex">
+            <li key={card.id} style={{ backgroundImage: `url(${card.img})` }} className="card flex">
               <article className="flex-columns">
                 <h3>{card.title}</h3>
-                <p>{truncateText(card.short_text, 104)}</p>
-                <Link href={card.cta}> Read more...</Link>
+                <p>{truncateText(card.short_text, 200)}</p>
+                {/*                 <Link href={card.cta}> Read more...</Link>
+                 */}{" "}
               </article>
             </li>
           );
