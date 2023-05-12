@@ -5,7 +5,7 @@ export default function HeroSect() {
         <h2>
           Are you ready to get a <span className="title">Better Site </span>for your business?
         </h2>
-        <div className="duo-button-container flex">
+        <div className="flex">
           <button className="button primary-button">Free Risk Try</button>
           <button className="button secondary-button">Pricing</button>
         </div>

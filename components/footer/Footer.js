@@ -5,7 +5,7 @@ import TitleAdress from "./TitleAdress";
 
 export default function Footer() {
   return (
-    <footer className="flex">
+    <footer className="flex wrap">
       <LongLogo />
       <ContactForm />
       <TitleAdress />

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 
 export default function CTA() {
   return (
@@ -7,7 +6,7 @@ export default function CTA() {
       <h1 className="display-text title-cta-sect">Explore your potential </h1>
       <div className="flex article-info wrap">
         <div className="flex-columns article-text">
-          <h2>Just 1200 DKK/m</h2>
+          <h2 className="stroke-dark sub-title-light">Just 1200 DKK/m</h2>
           <p>
             Welcome to Better Sites, we are here to improve your business´s online presence and help you reach more clients. Our team is dedicated to creating easy-to-use and effective websites that will help you grow your business quickly and
             efficiently.
