@@ -1,5 +1,5 @@
 import Anchor from "./Anchor";
-import { AppContext } from "../context/AppContext";
+import { AppContext } from "../../context/AppContext";
 import { useContext } from "react";
 import Image from "next/image";
 import Hamburguer from "./Hamburguer";
