@@ -50,7 +50,7 @@
 
 /* ---// Reset //--- */
 * {
-  outline: 2px dotted hotpink;
+  /* outline: 2px dotted hotpink; */
 
   box-sizing: border-box;
   padding: 0;
@@ -385,9 +385,9 @@ nav {
 }
 
 .menus-mobil a:hover,
-.menus-mobil a:active,
+.menus-mobil .active,
 .navigation-desktop a:hover,
-.navigation-desktop a:active {
+.navigation-desktop .active {
   color: var(--accent-color-light-blue);
   text-decoration: underline;
   text-underline-offset: 10px;
