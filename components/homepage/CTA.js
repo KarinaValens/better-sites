@@ -15,7 +15,7 @@ export default function CTA() {
           <button className="button primary-button">Contact Us</button>
         </div>
         <div className="img-container">
-          <Image src={"/media/images/first_cta_sect.webp"} alt={"logo"} /* width={200} height={200}  */ fill placeholder="empty" /* priority={true} */ />
+          <Image src={"/media/images/first_cta_sect.webp"} alt={"cta-img"} /* width={200} height={200}  */ fill placeholder="empty" /* priority={true} */ />
         </div>
       </div>
     </article>

@@ -15,7 +15,7 @@ export default function ServicesHero() {
           </div>
         </div>
         <div className="img-container">
-          <Image src={"/media/images/services_1_cta.webp"} alt={"logo"} /* width={200} height={200}  */ fill placeholder="empty" /* priority={true} */ />
+          <Image src={"/media/images/services_1_cta.webp"} alt={"services 1"} fill placeholder="empty" sizes="(max-width: 700px) 100vw, 700px" /* priority={true} */ />
         </div>
       </div>
     </article>
