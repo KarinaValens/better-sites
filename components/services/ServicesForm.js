@@ -39,15 +39,15 @@ export default function ServicesForm() {
         <form className="flex-columns services-form" onSubmit={pushCustomerInfo} ref={form}>
           <label className="flex" htmlFor="full_name">
             Full Name
-            <input className="form-input" type="text" name="full_name" />
+            <input required className="form-input" type="text" name="full_name" />
           </label>
           <label className="flex" htmlFor="email">
             Email
-            <input className="form-input" type="email" name="email" />
+            <input required className="form-input" type="email" name="email" />
           </label>
           <label className="flex" htmlFor="company_name">
             Company`s Name
-            <input className="form-input" type="text" name="company_name" />
+            <input required className="form-input" type="text" name="company_name" />
           </label>
           <label className="flex" htmlFor="company_URL">
             Company`s URL

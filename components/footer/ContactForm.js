@@ -7,11 +7,11 @@ export default function ContactForm() {
       <form className="flex-columns contact-form">
         <label className="flex" htmlFor="full-name">
           Full Name
-          <input type="text" name="full-name" />
+          <input requiered type="text" name="full-name" />
         </label>
         <label className="flex" htmlFor="email">
           Email
-          <input type="email" name="email" />
+          <input required type="email" name="email" />
         </label>
       </form>
     </div>
