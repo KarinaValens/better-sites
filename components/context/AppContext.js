@@ -13,9 +13,12 @@ export default function AppContextProvider({ children }) {
 
   const url = "https://karinavalens-35ec.restdb.io/rest/better-sites  ";
 
+  const mailU = "dac657d711abce8c5203722d7";
+  const mailID = "977b2212a9";
+
   //5. create a const that is going to be the value of the context,
   // with everything that we want to share to other pages or components
-  const value = { show, setShow, url };
+  const value = { show, setShow, url, mailU, mailID };
   //6. Wrap the -app.js page in the context
 
   return (

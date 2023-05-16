@@ -159,6 +159,12 @@ label {
   box-shadow: var(--containers-shadows);
   font: 700 var(--font-size-body) var(--font-copy-text);
 }
+
+.contact-form .button {
+  width: 100%;
+  height: 2rem;
+  border-radius: 8px;
+}
 .button:hover {
   background: var(--copy-text-color-black);
   color: var(--copy-text-color-black);
@@ -407,9 +413,11 @@ footer > div {
   padding-bottom: 1.31rem;
   flex: 1 1 50vw;
   max-width: 276px;
-}
-footer > div:not(footer > div:last-child) {
   border-bottom: 1px solid var(--bg-color-disaible);
+}
+
+.social {
+  border-bottom: none;
 }
 
 .logo-concept {
@@ -547,11 +555,13 @@ footer > div:not(footer > div:last-child) {
     justify-content: space-around;
   }
   footer > div {
-    border-bottom: none !important;
-    flex: 1 1 24vw;
+    flex: 1 1 20vw;
   }
-  footer > div:last-child {
-    flex-basis: 10vw;
+  .form-container {
+    flex-basis: 26vw;
+  }
+  .social {
+    border-bottom: 1px solid var(--bg-color-disaible);
   }
 
   .bg-container {
@@ -604,7 +614,7 @@ footer > div:not(footer > div:last-child) {
     align-items: center;
   }
 
-  .navigation-desktop a {
+  .navigation-desktop a, .footer-titles {
     max-width: 9rem;
     text-align: center;
     color: var(--accent-color-beige);
@@ -612,12 +622,24 @@ footer > div:not(footer > div:last-child) {
     padding: 1rem;
     display: block;
   }
-
+  footer {
+    justify-content: space-evenly;
+  }
   footer > div:not(h3) {
     font-size: 12px;
   }
   footer h3 {
     font-size: 1.2rem;
+  }
+  .form-container {
+    flex-basis: 24vw !important;
+  }
+  footer > div {
+    border-bottom: none !important;
+  }
+  .social,
+  .title-address {
+    flex: 0 1 10vw !important;
   }
 }
 

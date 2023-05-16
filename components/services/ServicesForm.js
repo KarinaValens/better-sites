@@ -27,7 +27,7 @@ export default function ServicesForm() {
     // Clear the form fields
     form.current.reset();
     setSubmitted(true); // Set the submitted state to true after the form is submitted
-    console.log(newContactInfo);
+    //console.log(newContactInfo);
   }
 
   return (
