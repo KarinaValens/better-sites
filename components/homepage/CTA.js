@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CTA() {
   return (
@@ -12,7 +13,9 @@ export default function CTA() {
             efficiently.
           </p>
           <p>With our care plan, you can be confident that your website will always be up-to-date and running smoothly. Don´t wait any longer to improve your business´s online presence. Choose Better Sites today and grow fast, grow better.</p>
-          <button className="button primary-button">Contact Us</button>
+          <Link href={"/contact"} className="button flex center primary-button">
+            Contact Us
+          </Link>
         </div>
         <div className="img-container">
           <Image src={"/media/images/first_cta_sect.webp"} alt={"cta-img"} /* width={200} height={200}  */ fill placeholder="empty" /* priority={true} */ />

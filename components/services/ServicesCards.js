@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { services_cards } from "../../pages/api/cards";
-import { useState } from "react";
 
 export default function ServicesCards() {
-  const [truncatedText, setTruncatedText] = useState("");
 
   return (
     <section className="bg-dark carousel flex">

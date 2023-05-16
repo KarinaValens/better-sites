@@ -1,26 +1,18 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useState } from "react";
 
 export default function ContactForm({ subscribe, status, message, onValidated }) {
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
-  // to clean the form after being submited
-  const form = useRef();
-  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     email &&
       fullName &&
       email.indexOf("@") > -1 &&
-      onValidated(
-        {
-          EMAIL: email,
-          MERGE1: fullName,
-        },
-        // Clear the form fields
-        form.current.reset(),
-        setSubmitted(true) // Set the submitted state to true after the form is submitted
-      );
+      onValidated({
+        EMAIL: email,
+        MERGE1: fullName,
+      });
   };
   //console.log("onValidated", onValidated);
 
@@ -29,7 +21,7 @@ export default function ContactForm({ subscribe, status, message, onValidated })
       <h4> {status === "success" ? "Success!" : "Keep in touch"}</h4>
 
       {status !== "success" ? (
-        <form ref={form} className="flex-columns contact-form" onSubmit={handleSubmit}>
+        <form className="flex-columns contact-form" onSubmit={handleSubmit}>
           {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
           {status === "error" && <div style={{ color: "red" }} dangerouslySetInnerHTML={{ __html: message }} />}
           {status === "success" && <div style={{ color: "green" }}>Subscribed !</div>}

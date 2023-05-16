@@ -148,6 +148,11 @@ label {
   flex-wrap: wrap;
 }
 
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
 .grid-2x2 {
   display: grid;
   grid-template-columns: 60% 1fr;
@@ -317,7 +322,7 @@ label {
 /*----------------------------// MOBIL FIRST //--------------------------  */
 /* Navigation */
 .navigation-desktop,
-nav button {
+nav .button {
   display: none;
 }
 
@@ -517,14 +522,12 @@ footer > div {
 
 /* --// Services Hero //-- */
 
-.services-hero .article-text {
+.service-article-text {
   justify-content: space-around;
   flex: 1 1 5rem;
 }
-.services-hero-flex {
-  flex-wrap: wrap-reverse;
-}
-.services-hero button {
+
+.services-hero .button {
   margin-right: 3rem;
 }
 /* --// Services Cards //-- */
@@ -572,9 +575,15 @@ footer > div {
     width: 71vw;
     padding: 2rem;
   }
+
   .article-text {
     padding: 2.18rem 2rem;
+    flex: 1 1 15rem;
   }
+  .img-container {
+    flex: 1 1 15rem;
+  }
+
   .icons-group {
     max-width: 60%;
     gap: 4rem;
@@ -595,7 +604,7 @@ footer > div {
   .services-hero > div {
     gap: 5rem;
   }
-  .services-hero .article-text {
+  .service-article-text {
     flex: 1 1 10rem;
   }
 }
@@ -604,17 +613,13 @@ footer > div {
     display: none;
   }
 
-  nav button {
-    align-self: center;
-  }
   .navigation-desktop,
-  nav button {
+  nav .button {
     display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
-  .navigation-desktop a, .footer-titles {
+  .navigation-desktop a,
+  .footer-titles {
     max-width: 9rem;
     text-align: center;
     color: var(--accent-color-beige);

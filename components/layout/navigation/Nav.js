@@ -5,6 +5,7 @@ import Image from "next/image";
 import Hamburguer from "./Hamburguer";
 import NavMenusMobil from "./NavMenusMobil";
 import NavMenusDesktop from "./NavMenusDesktop";
+import Link from "next/link";
 
 export default function Nav() {
   const { show } = useContext(AppContext);
@@ -17,7 +18,9 @@ export default function Nav() {
         </Anchor>
         <Hamburguer />
         <NavMenusDesktop />
-        <button className="button  primary-button">Contact Us</button>
+        <Link href={"/contact"} className="button center primary-button">
+          Contact Us
+        </Link>
       </nav>
       {show ? <NavMenusMobil /> : false}
     </>
