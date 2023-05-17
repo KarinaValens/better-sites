@@ -52,3 +52,9 @@ export const services_cards = [
       "We take care of everything from routine maintenance to security patches, ensuring your site runs smoothly and is protected from potential threats. This way, you can have peace of mind and focus on other important aspects of your business.",
   },
 ];
+
+export const pricing_cards = [
+  { id: "1", title: "Basic", price: " 1200 DKK/m", content: ["A Fully Managed Site", "5 pages Website", "On Page SEO", "Automated Email", "Google Analytics ", "Unlimited Update Requests"] },
+  { id: "2", title: "Popular", price: " 1700 DKK/m", content: ["Everything In Basic +", "10 Pages Website", "Pop up Lead Capture", "Automated SMS", "CRM Automatization", "Unlimited Block Posting"] },
+  { id: "3", title: "Pro", price: " 2000 DKK/m", content: ["Everything in Popular +", "20 Pages Website", "Automated Review Posting", "Additional Automations", "Premium Support", "First of Line Priority"] },
+];

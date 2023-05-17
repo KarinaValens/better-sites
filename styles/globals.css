@@ -25,7 +25,9 @@
   --bg-color-light: hsl(30, 100%, 99%);
   --bg-color-disaible: hsl(60, 2%, 88%);
   --bg-glass-dark: hsla(0, 0%, 0%, 0.3);
+
   --border-color-glass-light: hsla(0, 6%, 87%, 0.47);
+  --divider-lighther: hsla(0, 1%, 44%, 0.429);
 
   --stroke-dark: -1px -1px 0 var(--copy-text-color-black), 1px -1px 0 var(--copy-text-color-black), -1px 1px 0 var(--copy-text-color-black), 1px 1px 0 var(--copy-text-color-black);
 
@@ -50,8 +52,8 @@
 
 /* ---// Reset //--- */
 * {
-  /* outline: 2px dotted hotpink; */
-
+  /*   outline: 2px dotted hotpink;
+ */
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -246,12 +248,12 @@ label {
 .img-container {
   position: relative;
   aspect-ratio: 1 / 0.8;
-  flex: 1 1 20rem;
+  flex: 1 1 25rem;
 }
 
 .article-text {
-  flex: 1 1 25rem;
-  padding: 2.18rem 5.5rem;
+  flex: 1 1 22rem;
+  padding: 2.18rem 2rem;
   gap: 1rem;
   justify-content: center;
 }
@@ -272,14 +274,8 @@ label {
   color: var(--primary-color-green);
 }
 
-.carousel {
-  align-items: center;
-  max-width: 100%;
-  height: 35rem;
-  overflow-x: hidden;
-}
-
-.cards-container {
+.cards-container,
+.pricing-wraper {
   gap: 2rem;
   width: 80%;
   height: 70%;
@@ -288,7 +284,8 @@ label {
 }
 
 .cards-container::-webkit-scrollbar,
-.card article::-webkit-scrollbar {
+.card article::-webkit-scrollbar,
+.pricing-wraper::-webkit-scrollbar {
   /* this is going to hide the scroll bar */
   display: none;
 }
@@ -318,7 +315,9 @@ label {
 .card::before {
   border-radius: 8px;
 }
-
+.high-loght-sub3 {
+  color: var(--accent-color-light-blue);
+}
 /*----------------------------// MOBIL FIRST //--------------------------  */
 /* Navigation */
 .navigation-desktop,
@@ -471,6 +470,16 @@ footer > div {
 }
 
 /* -------// Services Card Sect//-------*/
+.carousel,
+.pricing-carousel {
+  align-items: center;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.carousel {
+  height: 35rem;
+}
 
 .card article {
   justify-self: flex-end;
@@ -522,11 +531,6 @@ footer > div {
 
 /* --// Services Hero //-- */
 
-.service-article-text {
-  justify-content: space-around;
-  flex: 1 1 5rem;
-}
-
 .services-hero .button {
   margin-right: 3rem;
 }
@@ -544,13 +548,58 @@ footer > div {
   display: block;
 }
 
-.services-card h3 {
-  color: var(--accent-color-light-blue);
-}
 /* --// Services Form //-- */
 
 .services-form .duo-button-container {
   margin-top: 2rem;
+}
+
+/* --// All Packages Pricing Description Card //-- */
+
+.pricing-card {
+  width: 80%;
+  max-width: 350px;
+  margin: auto;
+  border-radius: 16px;
+  padding: 2rem 3rem;
+  box-shadow: var(--containers-shadows);
+}
+
+.card-list {
+  margin: 2rem 0%;
+}
+
+.card-list-item {
+  list-style: disc;
+  border-bottom: 1px solid var(--divider-lighther);
+  padding: 0.5rem 0;
+}
+
+/* --// Packages Pricing Description Cards //-- */
+
+.pricing-card-continer {
+  min-width: 20rem;
+  margin: auto;
+  margin: 3rem 0%;
+  border: 1px solid var(--primary-color-green);
+  border-radius: 16px;
+}
+
+.pricing-card-continer .pricing-card {
+  padding: 2rem 0%;
+  width: 100%;
+  justify-content: space-around;
+  border-radius: 0% 0% 16px 16px;
+}
+.card-list-title {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 16px 16px 0% 0%;
+  box-shadow: var(--containers-shadows);
+}
+.card-list .card-list-item:first-child {
+  color: var(--primary-color-green);
+  font-weight: bolder;
 }
 /* ------------------------------// Media Queries //-------------------------------------- */
 @media (600px<=width) {
@@ -576,12 +625,8 @@ footer > div {
     padding: 2rem;
   }
 
-  .article-text {
-    padding: 2.18rem 2rem;
-    flex: 1 1 15rem;
-  }
   .img-container {
-    flex: 1 1 15rem;
+    flex: 1 1 12rem;
   }
 
   .icons-group {
@@ -599,13 +644,7 @@ footer > div {
   }
   /* -----// Services Page //----- */
   .services-hero {
-    padding: 5rem;
-  }
-  .services-hero > div {
-    gap: 5rem;
-  }
-  .service-article-text {
-    flex: 1 1 10rem;
+    padding-bottom: 5rem;
   }
 }
 @media (960px <= width) {
@@ -645,6 +684,13 @@ footer > div {
   .social,
   .title-address {
     flex: 0 1 10vw !important;
+  }
+  .pricing-card {
+    max-width: 400px;
+  }
+  .pricing-wraper {
+    width: 85%;
+    justify-content: space-around;
   }
 }
 
