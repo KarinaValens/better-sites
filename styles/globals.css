@@ -52,8 +52,8 @@
 
 /* ---// Reset //--- */
 * {
-  /*   outline: 2px dotted hotpink;
- */
+  /* outline: 2px dotted hotpink; */
+
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -278,9 +278,10 @@ label {
 .pricing-wraper {
   gap: 2rem;
   width: 80%;
-  height: 70%;
+
+  /* height: 70%; */
   overflow-x: scroll;
-  margin: auto;
+  margin: 4rem auto;
 }
 
 .cards-container::-webkit-scrollbar,
@@ -580,7 +581,8 @@ footer > div {
 .pricing-card-continer {
   min-width: 20rem;
   margin: auto;
-  margin: 3rem 0%;
+  /*   margin: 3rem 0%;
+ */
   border: 1px solid var(--primary-color-green);
   border-radius: 16px;
 }
@@ -689,7 +691,7 @@ footer > div {
     max-width: 400px;
   }
   .pricing-wraper {
-    width: 85%;
+    width: 100%;
     justify-content: space-around;
   }
 }
