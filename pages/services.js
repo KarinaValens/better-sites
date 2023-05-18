@@ -6,10 +6,14 @@ import ServicesHero from "../components/services/ServicesHero";
 export default function services() {
   return (
     <>
-      <ServicesHero />
-      <ServicesCards />
-      <ServicesForm />
-      <IconsSection />
+      {!show && (
+        <main>
+          <ServicesHero />
+          <ServicesCards />
+          <ServicesForm />
+          <IconsSection />
+        </main>
+      )}
     </>
   );
 }
