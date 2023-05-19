@@ -121,8 +121,6 @@ form {
   gap: 1rem;
 }
 label {
-  /*   flex-wrap: wrap;
- */
   justify-content: space-between;
   border-radius: 8px;
   gap: 5px;
@@ -193,6 +191,10 @@ label {
 
 .bg-container {
   width: 100%;
+}
+
+.bg-container-paymment,
+.bg-container {
   padding: 3rem;
   display: grid;
   place-items: center;
@@ -236,7 +238,7 @@ label {
 .sub-title-light {
   color: var(--accent-color-beige);
 }
-.sub-title-darck {
+.sub-title-dark {
   color: var(--primary-color-green);
 }
 .article-info {
@@ -603,6 +605,17 @@ footer > div {
   color: var(--primary-color-green);
   font-weight: bolder;
 }
+
+/* --// Summary Payment//-- */
+
+.summary-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.summary {
+  margin: 3rem auto;
+}
+
 /* ------------------------------// Media Queries //-------------------------------------- */
 @media (600px<=width) {
   footer {

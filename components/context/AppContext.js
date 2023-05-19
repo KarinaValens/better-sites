@@ -25,10 +25,14 @@ export default function AppContextProvider({ children }) {
     title: " ",
     price: " ",
   });
+  //Storage the information formt he package that the user chose
+  const [selectedPackage, setSelectedPackage] = useState(null);
+  //Confirm if the payment has been confirm
+  const [payment, setPayment] = useState(false);
 
   //5. create a const that is going to be the value of the context,
   // with everything that we want to share to other pages or components
-  const value = { show, setShow, url, mailU, mailID, pricing, setPricing };
+  const value = { show, setShow, url, mailU, mailID, pricing, setPricing, selectedPackage, setSelectedPackage, payment, setPayment };
   //6. Wrap the -app.js page in the context
 
   return (

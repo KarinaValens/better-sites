@@ -31,7 +31,7 @@ export default function ServicesForm() {
   }
 
   return (
-    <div className="bg-container" style={{ backgroundImage: "url(/media/images/3_second_cta.webp)" }}>
+    <section className="bg-container" style={{ backgroundImage: "url(/media/images/3_second_cta.webp)" }}>
       <div className="glass-container hero flex-columns">
         <h2>
           Let`s get started with your <span className="title">Better Site </span>
@@ -61,6 +61,6 @@ export default function ServicesForm() {
           </div>
         </form>
       </div>
-    </div>
+    </section>
   );
 }

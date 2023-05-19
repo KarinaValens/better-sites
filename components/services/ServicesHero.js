@@ -7,7 +7,7 @@ export default function ServicesHero() {
       <h1 className="display-text title-cta-sect">Subscription base services</h1>
       <div className="flex article-info wrap">
         <div className="flex-columns article-text service-article-text">
-          <h2 className="sub-title-darck">Just 1200 DKK/m</h2>
+          <h2 className="sub-title-dack">Just 1200 DKK/m</h2>
           <p>Focus on your business while we take care of your online presence. Our expert team will ensure your website is running smoothly, so you can reach more customers and grow your brand. </p>
           <p>Connect with your customers like never before.</p>
           <div className="flex">
