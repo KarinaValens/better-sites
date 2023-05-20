@@ -193,9 +193,9 @@ label {
   width: 100%;
 }
 
-.bg-container-paymment,
 .bg-container {
-  padding: 3rem;
+  padding: 3rem 0%;
+
   display: grid;
   place-items: center;
   grid-template-columns: 1fr;
@@ -280,12 +280,13 @@ label {
 .pricing-wraper {
   gap: 2rem;
   width: 80%;
-
-  /* height: 70%; */
   overflow-x: scroll;
   margin: 4rem auto;
 }
 
+.cards-container {
+  height: 70%;
+}
 .cards-container::-webkit-scrollbar,
 .card article::-webkit-scrollbar,
 .pricing-wraper::-webkit-scrollbar {

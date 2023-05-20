@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function CTA() {
   return (
     <article className="bg-dark cta-section">
-      <h1 className="display-text title-cta-sect">Explore your potential </h1>
+      <h2 className="display-text title-cta-sect">Explore your potential </h2>
       <div className="flex article-info wrap">
         <div className="flex-columns article-text">
           <h2 className="stroke-dark sub-title-light">Just 1200 DKK/m</h2>

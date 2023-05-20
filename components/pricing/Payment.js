@@ -46,10 +46,9 @@ export default function Payment() {
           <Summary />
         ) : (
           <main className="summary-payment flex wrap center">
-            <h1>Payment Information</h1>
             <section className="bg-container" style={{ backgroundImage: "url(/media/images/3_second_cta.webp)" }}>
               <div className="glass-container hero flex-columns">
-                <h2>Payment Information</h2>
+                <h1 className="title">Payment Information</h1>
                 <form className="flex-columns services-form" ref={form} onSubmit={handlePayment}>
                   <label className="flex" htmlFor="full_name">
                     First Name
