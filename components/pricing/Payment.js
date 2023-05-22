@@ -1,20 +1,19 @@
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { AppContext } from "../context/AppContext";
 import Summary from "./Summary";
 
 export default function Payment() {
-  const { show, payment, setPayment } = useContext(AppContext);
+  const { show, payment, setPayment, setSelectedPackage } = useContext(AppContext);
   const form = useRef();
-
   //formating payment
-  function handleDate(e) {
+  const handleDate = (e) => {
     const input = e.target;
     let value = input.value;
     if (value.length === 2) {
       value += "/";
       input.value = value;
     }
-  }
+  };
 
   /* It first removes any non-digit characters with value.replace(/\D/g,''), 
     then it's using the match() method with the regular expression .{1,4} 
@@ -34,10 +33,17 @@ export default function Payment() {
     input.value = value;
   };
 
-  function handlePayment(e) {
+  const handlePayment = (e) => {
     e.preventDefault();
     setPayment(true);
-  }
+  };
+
+  useEffect(() => {
+    return () => {
+      // Reset the payment state when the component unmounts
+      setPayment("");
+    };
+  }, [setPayment]);
 
   return (
     <>
@@ -75,7 +81,14 @@ export default function Payment() {
                     <button type="submit" className="button primary-button">
                       Pay
                     </button>
-                    <button className="button secondary-button">Discard</button>
+                    <button
+                      onClick={(e) => {
+                        setSelectedPackage(false);
+                      }}
+                      className="button secondary-button"
+                    >
+                      Discard
+                    </button>
                   </div>
                 </form>
               </div>

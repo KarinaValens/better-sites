@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { pricing_cards } from "../../pages/api/cards";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../context/AppContext";
 import SummaryPayment from "./Payment";
 
