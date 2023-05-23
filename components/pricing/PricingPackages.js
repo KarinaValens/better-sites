@@ -28,7 +28,7 @@ export default function Packages() {
             return (
               <>
                 <div key="i++" className="pricing-card-continer">
-                  <h3 className="high-loght-sub3 bg-dark card-list-title bg-dark">{card.title}</h3>
+                  <h3 className="high-light-sub3 bg-dark card-list-title bg-dark">{card.title}</h3>
                   <div className="pricing-card flex-columns center">
                     <h4 className="title">{card.price}</h4>
                     <ul className="card-list flex-columns">

@@ -4,7 +4,7 @@ export default function AllPackage() {
   return (
     <div className="">
       <div className="pricing-card bg-dark flex-columns center">
-        <h3 className="high-loght-sub3">All Package Include</h3>
+        <h3 className="high-light-sub3">All Package Include</h3>
         <ul className="card-list flex-columns">
           <li className="card-list-item">Customized Template</li>
           <li className="card-list-item">Custom Leads Form</li>

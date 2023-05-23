@@ -37,7 +37,7 @@
   --containers-shadows: 4px 4px 4px var(--bg-glass);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --primary-color: #154034;
 
@@ -45,14 +45,13 @@
     --accent-color-two: hsl(0, 0%, 100%);
 
     --copy-text-color: hsl(0, 0%, 100%);
-    --copy-text-color-secondary: hsl(0, 0%, 100%);
 
     --bg-color: #01261c;
     --bg-glass: hsl(0deg 0.36% 66.65% / 30%);
 
     --stroke-dark: -1px -1px 0 var(--bg-color), 1px -1px 0 var(--bg-color), -1px 1px 0 var(--bg-color), 1px 1px 0 var(--bg-color);
   }
-}
+} */
 
 /* ---// Reset //--- */
 * {
@@ -215,7 +214,7 @@ label {
 .glass-container {
   justify-content: space-around;
   text-align: center;
-  color: var(--copy-text-color);
+  color: var(--copy-text-color-secondary);
   border-radius: 20px;
   border: solid 1px var(--border-color-glass-light);
   background-color: var(--bg-glass);
@@ -291,12 +290,7 @@ label {
 .cards-container {
   height: 70%;
 }
-.cards-container::-webkit-scrollbar,
-.card article::-webkit-scrollbar,
-.pricing-wraper::-webkit-scrollbar {
-  /* this is going to hide the scroll bar */
-  display: none;
-}
+
 .card {
   position: relative;
   align-items: flex-end;
@@ -308,22 +302,8 @@ label {
   background-size: cover;
   background-position: center;
 }
-.card::before,
-.bg-container::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
-  z-index: 1;
-}
-.card::before {
-  border-radius: 8px;
-}
-.high-loght-sub3 {
+
+.high-light-sub3 {
   color: var(--accent-color-one);
 }
 /*----------------------------// MOBIL FIRST //--------------------------  */
@@ -489,6 +469,30 @@ footer > div {
   height: 35rem;
 }
 
+.cards-container::-webkit-scrollbar,
+.card article::-webkit-scrollbar,
+.pricing-wraper::-webkit-scrollbar {
+  /* this is going to hide the scroll bar */
+  display: none;
+}
+.card::before,
+.bg-container::before,
+.step-image-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  z-index: 1;
+}
+.card::before,
+.step-image-container::before {
+  border-radius: 8px;
+}
+
 .card article {
   justify-self: flex-end;
   padding: 1rem;
@@ -621,6 +625,70 @@ footer > div {
   margin: 3rem auto;
 }
 
+/* --// Process pages//-- */
+.process {
+  gap: 1rem;
+  margin: 2rem;
+}
+.process-steps {
+  width: 24rem;
+  margin: auto;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.process-text {
+  z-index: 2;
+  gap: 2rem;
+  padding: 2rem;
+}
+.process-steps > div {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.process-steps h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--accent-color-one);
+  padding-bottom: 2rem;
+}
+
+.step-number {
+  background-color: var(--accent-color-one);
+  color: var(--copy-text-color-secondary);
+  padding: 0.5rem 1.5rem;
+  border-radius: 200px;
+  box-shadow: var(--containers-shadows);
+}
+.process-steps p {
+  color: var(--copy-text-color-secondary);
+}
+.img-container.step-image-container {
+  aspect-ratio: 1/1.2 !important;
+}
+.process-steps img {
+  border-radius: 8px;
+}
+
+.step-image-container {
+  display: none; /* Hide the image container on mobile */
+}
+.process-steps:nth-child(odd) .step-image-container {
+  display: block; /* Show the image container for odd-numbered steps on mobile */
+}
+
+.process-steps:nth-child(even) p {
+  color: var(--copy-text-color);
+}
+.process-steps:nth-child(even) .process-text {
+  background-color: var(--bg-color-secondary); /* Apply a background color to even-numbered steps on mobile */
+  border: 1px solid var(--accent-color-one);
+  border-radius: 8px;
+}
 /* ------------------------------// Media Queries //-------------------------------------- */
 @media (600px<=width) {
   footer {
@@ -665,6 +733,28 @@ footer > div {
   /* -----// Services Page //----- */
   .services-hero {
     padding-bottom: 5rem;
+  }
+
+  /* -----// Process Page //----- */
+
+  .process-steps {
+    grid-template-columns: 50% 48%;
+    width: 85vw;
+    justify-content: space-between;
+  }
+
+  .process-steps .step-image-container {
+    display: block; /* Show the image container on tablet */
+    grid-column: 2;
+  }
+
+  .process-steps:nth-child(odd) .process-text {
+    background-color: var(--primary-color); /* Apply a background color to odd-numbered steps on tablet */
+    border-radius: 8px;
+  }
+
+  .process-steps p {
+    color: var(--copy-text-color-secondary);
   }
 }
 @media (960px <= width) {
@@ -711,6 +801,10 @@ footer > div {
   .pricing-wraper {
     width: 100%;
     justify-content: space-around;
+  }
+  .process-steps {
+    grid-template-columns: 50% 35%;
+    width: 75vw;
   }
 }
 
