@@ -15,7 +15,7 @@ export default function Process() {
               <p>{card.text}</p>
             </div>
             <div className=" img-container step-image-container">
-              <Image className=" step-image" src={card.image} alt={"services 1"} fill placeholder="empty" sizes="(max-width: 700px) 100vw, 700px" priority={true} />
+              <Image className=" step-image" src={card.image} alt={`Process Step ${card.number}`} fill placeholder="empty" sizes="(max-width: 700px) 100vw, 700px" priority={true} />
 
               {/* <div className="img-container step-image" style={{ backgroundImage: `url(${card.image})` }} /> */}
             </div>
