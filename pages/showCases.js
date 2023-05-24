@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import ShowCasesCTA from "../components/showcases/ShowCasesCTA";
+import ShowcasesCTA from "../components/showcases/ShowcasesCTA";
+import ShowcasesCards from "../components/showcases/ShowcasesCards";
 import { AppContext } from "../components/context/AppContext";
 
 export default function Showcases() {
@@ -9,7 +10,8 @@ export default function Showcases() {
     <>
       {!show && (
         <main>
-          <ShowCasesCTA />
+          <ShowcasesCTA />
+          <ShowcasesCards />
         </main>
       )}
     </>
