@@ -65,7 +65,7 @@ export const steps_cards = [
     id: "2",
     number: "2",
     text: "Choose the package that better fits your company`s needs from our three pricing options. All of our packages are available on a flexible 24-month pricing plan. If you prefer to pay upfront, you can get a special discount.  Need an eCommerce site or something beyond our basic pricing options? No worries, just let us know and we`ll send you a formal proposal tailored to your unique requirements.",
-    image: "/media/images/process_step_2.webp ",
+    image: "/media/images/process_step_2.webp",
   },
   {
     id: "3",

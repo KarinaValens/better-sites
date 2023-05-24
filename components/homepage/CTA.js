@@ -18,7 +18,7 @@ export default function CTA() {
           </Link>
         </div>
         <div className="img-container">
-          <Image src={"/media/images/first_cta_sect.webp"} alt={"cta-img"} /* width={200} height={200}  */ fill placeholder="empty" /* priority={true} */ />
+          <Image src={"/media/images/first_cta_sect.webp"} alt={"cta-img"} fill placeholder="empty" sizes="(max-width: 700px) 100vw, 700px" /* priority={true} */ />
         </div>
       </div>
     </article>

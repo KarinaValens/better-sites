@@ -147,6 +147,7 @@ label {
   display: flex;
   flex-direction: column;
 }
+
 .wrap {
   flex-wrap: wrap;
 }
@@ -733,6 +734,10 @@ footer > div {
   /* -----// Services Page //----- */
   .services-hero {
     padding-bottom: 5rem;
+  }
+
+  .services-article {
+    flex-direction: row-reverse;
   }
 
   /* -----// Process Page //----- */

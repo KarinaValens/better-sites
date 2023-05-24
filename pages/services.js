@@ -2,8 +2,8 @@ import { useContext } from "react";
 import IconsSection from "../components/homepage/IconsSection";
 import ServicesCards from "../components/services/ServicesCards";
 import ServicesForm from "../components/services/ServicesForm";
-import ServicesHero from "../components/services/ServicesHero";
 import { AppContext } from "../components/context/AppContext";
+import ServicesFirstSection from "../components/services/ServicesFirstSection";
 
 export default function Services() {
   const { show } = useContext(AppContext);
@@ -11,7 +11,7 @@ export default function Services() {
     <>
       {!show && (
         <main>
-          <ServicesHero />
+          <ServicesFirstSection />
           <ServicesCards />
           <ServicesForm />
           <IconsSection />
