@@ -10,7 +10,9 @@ export default function ShowcasesCards() {
             <li key={card.id} style={{ backgroundImage: `url(${card.img})` }} className="card services-card flex">
               <article className="showcases-card flex-columns ">
                 <h3 className="sub-title-light">{card.title}</h3>
-                <Link href={card.link}>Visit website...</Link>
+                <Link href={card.link} target="-blank">
+                  Visit website...
+                </Link>
               </article>
 
               {/* <article className="services-back-card flex-columns">
