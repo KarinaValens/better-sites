@@ -8,7 +8,7 @@
   --font-display: "Lobster", cursive;
 
   /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width]))); */
-  --font-size-body: calc(13px + (16 - 13) * ((100vw - 390px) / (1440 - 390)));
+  --font-size-body: calc(13.5px + (16 - 13.5) * ((100vw - 390px) / (1440 - 390)));
 
   /* ---// Colors //--- */
   --primary-color: hsl(168, 96%, 10%);
