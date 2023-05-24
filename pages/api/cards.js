@@ -47,7 +47,7 @@ export const services_cards = [
     id: "4",
     img: "/media/images/card4_services.webp",
     title: "Sales Focused",
-    short_text: "We build websites with a strong emphasis on conversion,",
+    short_text: "We build websites with a strong emphasis on conversion.",
     long_text:
       "We take care of everything from routine maintenance to security patches, ensuring your site runs smoothly and is protected from potential threats. This way, you can have peace of mind and focus on other important aspects of your business.",
   },
@@ -97,4 +97,10 @@ export const steps_cards = [
     text: "For the next two years, we will host your website on our premium servers and handle all necessary maintenance and updates, including fixing any issues or bugs that may arise. You'll also have access to unlimited client update requests, so whenever you need to make changes to your site, just let us know and we'll take care of it for you.",
     image: "/media/images/process_step_7.webp",
   },
+];
+
+export const showcases_cards = [
+  { index: "1", img: "/media/images/solomon_web.webp", title: "Solomon Sound Therapy", link: "https://karinavalens.github.io/Solomon-Sound-Therapy-Website/" },
+  { index: "2", img: "/media/images/CustomiseMe_web.webp", title: "CustomiseMe", link: "https://karinavalens.github.io/CustomiseMe/" },
+  { index: "3", img: "/media/images/Cinefilos_web.webp", title: "Cinéfilos", link: "https://karinavalens.github.io/Cinefilos/" },
 ];

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function SecondCTA() {
@@ -7,7 +8,9 @@ export default function SecondCTA() {
       <div className="flex-columns  cta-2-title">
         <h2>Do you still have questions? </h2>
         <h2>Let`s have a talk </h2>
-        <button className="button primary-button">Contact Us</button>
+        <Link href={"/contact"} className=" flex center button primary-button">
+          Contact Us
+        </Link>
       </div>
       <div className="flex-columns img-group">
         <div className="flex">

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ShowCasesCTA() {
+export default function ShowcasesCTA() {
   return (
     <article className="cta-section bg-dark services-hero">
       <h1 className="display-text title-cta-sect">Some of the Our Websites</h1>
