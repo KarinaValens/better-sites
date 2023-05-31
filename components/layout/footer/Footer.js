@@ -8,7 +8,6 @@ export default function Footer() {
   return (
     <footer className="flex wrap">
       <LongLogo />
-      {/* <ContactForm /> */}
       <MailChimpSubscribe />
       <TitleAdress />
       <Social />
