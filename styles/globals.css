@@ -288,6 +288,10 @@ label {
   margin: 4rem auto;
 }
 
+.pricing-wraper {
+  width: 85%;
+  gap: 1rem;
+}
 .cards-container {
   height: 70%;
 }
@@ -598,16 +602,14 @@ footer > div {
 /* --// Packages Pricing Description Cards //-- */
 
 .pricing-card-continer {
-  min-width: 20rem;
+  min-width: 19rem;
   margin: auto;
-  /*   margin: 3rem 0%;
- */
   border: 1px solid var(--primary-color);
   border-radius: 16px;
 }
 
 .pricing-card-continer .pricing-card {
-  padding: 2rem 0%;
+  padding: 1rem 0%;
   width: 100%;
   justify-content: space-around;
   border-radius: 0% 0% 16px 16px;
