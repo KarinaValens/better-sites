@@ -83,7 +83,7 @@ export const steps_cards = [
     id: "5",
     number: "5",
     text: "Experience the thrill of seeing your website come to life! Our team will present your website design, and you can enjoy the satisfaction of seeing your company's online presence elevated to a whole new level of professionalism and cleanliness. We welcome your feedback at this stage and are committed to making any necessary revisions until you are completely satisfied with the final result.",
-    image: "/media/images/step_1.webp",
+    image: "/media/images/step_5.webp",
   },
   {
     id: "6",
