@@ -473,7 +473,8 @@ footer > div {
 
 .cards-container::-webkit-scrollbar,
 .card article::-webkit-scrollbar,
-.pricing-wraper::-webkit-scrollbar {
+.pricing-wraper::-webkit-scrollbar,
+.truncateText::-webkit-scrollbar {
   /* this is going to hide the scroll bar */
   display: none;
 }
@@ -676,6 +677,10 @@ footer > div {
 }
 .process-steps p {
   color: var(--copy-text-color-secondary);
+}
+.truncateText {
+  height: 7rem;
+  overflow-y: scroll;
 }
 .img-container.step-image-container {
   aspect-ratio: 1/1.2 !important;

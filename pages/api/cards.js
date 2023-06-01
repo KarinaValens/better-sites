@@ -60,42 +60,42 @@ export const pricing_cards = [
 ];
 
 export const steps_cards = [
-  { id: "1", number: "1", text: "Ready to get started with your Better Site? Opening an account with us is fast and simple. Sign up now to begin the process.", image: "/media/images/process_step_5.webp" },
+  { id: "1", number: "1", text: "Ready to get started with your Better Site? Opening an account with us is fast and simple. Sign up now to begin the process.", image: "/media/images/step_1.webp" },
   {
     id: "2",
     number: "2",
     text: "Choose the package that better fits your company`s needs from our three pricing options. All of our packages are available on a flexible 24-month pricing plan. If you prefer to pay upfront, you can get a special discount.  Need an eCommerce site or something beyond our basic pricing options? No worries, just let us know and we`ll send you a formal proposal tailored to your unique requirements.",
-    image: "/media/images/process_step_2.webp",
+    image: "/media/images/step_2.webp",
   },
   {
     id: "3",
     number: "3",
     text: "Say goodbye to the hassle of back-and-forth communication. Our simple form collects all the necessary information for us to create your website without any delays or headaches. Spend a few minutes filling it out and leave the rest to us.",
-    image: "/media/images/process_step_3.webp",
+    image: "/media/images/step_3.webp",
   },
   {
     id: "4",
     number: "4",
     text: "Sit back, relax, and enjoy your favorite drink while we work our magic! Our team will complete the initial development of your website within one to three weeks, depending on the package you select. Once done, we'll send it over to you for review.",
-    image: "/media/images/process_step_4.webp",
+    image: "/media/images/step_4.webp",
   },
   {
     id: "5",
     number: "5",
     text: "Experience the thrill of seeing your website come to life! Our team will present your website design, and you can enjoy the satisfaction of seeing your company's online presence elevated to a whole new level of professionalism and cleanliness. We welcome your feedback at this stage and are committed to making any necessary revisions until you are completely satisfied with the final result.",
-    image: "/media/images/process_step_1.webp",
+    image: "/media/images/step_1.webp",
   },
   {
     id: "6",
     number: "6",
     text: "Congratulations, your website is now fully polished and ready to launch! We'll take care of pointing your domain to our servers, and your website will be live on the world wide web in no time.",
-    image: "/media/images/process_step_6.webp",
+    image: "/media/images/step_6.webp",
   },
   {
     id: "7",
     number: "7",
     text: "For the next two years, we will host your website on our premium servers and handle all necessary maintenance and updates, including fixing any issues or bugs that may arise. You'll also have access to unlimited client update requests, so whenever you need to make changes to your site, just let us know and we'll take care of it for you.",
-    image: "/media/images/process_step_7.webp",
+    image: "/media/images/step_7.webp",
   },
 ];
 
